@@ -11,9 +11,9 @@ public class Missile : MonoBehaviour
     {
         transform.position += transform.forward * speed * Time.deltaTime;
 
-        if(Vector3.Distance(transform.position, Player.Instance.position) > 130)
+        if(Vector3.Distance(transform.position, Player.Instance.transform.position) > 130)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

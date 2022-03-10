@@ -308,6 +308,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1595833479}
+  - component: {fileID: 1595833480}
   - component: {fileID: 1595833478}
   m_Layer: 0
   m_Name: Player
@@ -325,12 +326,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1595833477}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87ae00f75a294ab4e883f0e0d4f0559a, type: 3}
+  m_Script: {fileID: 11500000, guid: cb26cf55078761542a88a59918f484a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
-  fireTime: 2
-  missile: {fileID: 7117046012090126840, guid: 51c157654cdf9ca48b89eee1204116e9, type: 3}
+  missilePrefab: {fileID: 7117046012090126840, guid: 51c157654cdf9ca48b89eee1204116e9, type: 3}
+  missileCount: 20
 --- !u!4 &1595833479
 Transform:
   m_ObjectHideFlags: 0
@@ -346,6 +346,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1595833480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595833477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ae00f75a294ab4e883f0e0d4f0559a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 13
+  fireTime: 0.1
 --- !u!1 &8477463385361463140
 GameObject:
   m_ObjectHideFlags: 0
