@@ -9,21 +9,23 @@ public class MissileController : MonoBehaviour
     private GameObject missilePrefab;
 
     [SerializeField]
+    private Transform missileParent;
+
+    [SerializeField]
     private int missileCount;
 
     private Queue<GameObject> pool;
 
 
-    private void Start() 
+    private void Awake()
     {
         pool = new Queue<GameObject>();
         for (int i = 0; i < missileCount; i++)
         {
-            var missile = Instantiate(missilePrefab, transform.position, Quaternion.identity);
+            var missile = Instantiate(missilePrefab, transform.position, Quaternion.identity, missileParent);
             missile.SetActive(false);
             pool.Enqueue(missile);
         }
-
     }
 
     public void Fire()
