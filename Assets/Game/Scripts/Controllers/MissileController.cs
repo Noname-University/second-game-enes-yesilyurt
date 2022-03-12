@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MissileController : MonoBehaviour
 {
+    [SerializeField]
+    private Transform missilePoint;
 
     [SerializeField]
     private GameObject missilePrefab;
@@ -22,7 +24,7 @@ public class MissileController : MonoBehaviour
         pool = new Queue<GameObject>();
         for (int i = 0; i < missileCount; i++)
         {
-            var missile = Instantiate(missilePrefab, transform.position, Quaternion.identity, missileParent);
+            var missile = Instantiate(missilePrefab, missilePoint.position, Quaternion.identity, missileParent);
             missile.SetActive(false);
             pool.Enqueue(missile);
         }
@@ -31,7 +33,7 @@ public class MissileController : MonoBehaviour
     public void Fire()
     {
         var missile = pool.Dequeue();
-        missile.transform.position = transform.position;
+        missile.transform.position = missilePoint.position;
         missile.SetActive(true);
 
         pool.Enqueue(missile);
